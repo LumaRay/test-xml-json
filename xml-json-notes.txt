@@ -1,0 +1,26 @@
+http://aiweb.cs.washington.edu/research/projects/xmltk/xmldata/
+
+http://aiweb.cs.washington.edu/research/projects/xmltk/xmldata/www/repository.html#mondial
+
+http://aiweb.cs.washington.edu/research/projects/xmltk/xmldata/data/mondial/mondial-3.0.xml
+
+Good: https://www.convertjson.com/xml-to-json.htm
+
+No attr: https://codebeautify.org/xmltojson
+
+XML parser: https://jsonformatter.org/xml-parser
+
+XML space remover: https://www.text-utils.com/remove-extra-spaces/
+https://codebeautify.org/remove-extra-spaces
+
+XML minifier: https://www.webtoolkitonline.com/xml-minifier.html
+https://codebeautify.org/xml-minifier
+https://www.tutorialspoint.com/online_xml_minifier.htm
+
+JSON minifier: https://codebeautify.org/jsonminifier
+
+XML vs JSON
+https://www.toptal.com/web/json-vs-xml-part-1
+
+
+rust-quick-xml 39417

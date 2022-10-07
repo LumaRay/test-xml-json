@@ -1,0 +1,130 @@
+<!-- XML DTD "mondial-3.0.dtd":
+  (Wolfgang May, may@informatik.uni-freiburg.de, March 2001)
+  a hierarchical DTD for the MONDIAL database -->
+
+<!ELEMENT mondial (country*,continent*,organization*,
+                   mountain*,(sea*,river*,lake*,desert*,island*)*)> 
+<!ELEMENT country (name,encompassed+,
+                   ethnicgroups*,religions*,languages*,border*,
+                   province*,city*)>
+<!ATTLIST country car_code ID #IMPLIED
+                  capital IDREF #IMPLIED
+                  memberships IDREFS #IMPLIED
+                  id ID #REQUIRED
+                  name CDATA #REQUIRED
+                  datacode CDATA #IMPLIED
+                  continent CDATA #IMPLIED
+                  area CDATA #IMPLIED
+                  total_area CDATA #IMPLIED
+                  population CDATA #IMPLIED
+                  population_growth CDATA #IMPLIED
+                  infant_mortality CDATA #IMPLIED
+                  gdp_agri CDATA #IMPLIED
+                  gdp_ind CDATA #IMPLIED
+                  gdp_serv CDATA #IMPLIED
+                  inflation CDATA #IMPLIED
+                  gdp_total CDATA #IMPLIED
+                  indep_date CDATA #IMPLIED
+                  government CDATA #IMPLIED
+> 
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT population (#PCDATA)>
+<!-- note that population is also a subelement of city -->
+<!ATTLIST population year CDATA #IMPLIED>
+<!ELEMENT encompassed EMPTY>
+<!ATTLIST encompassed continent IDREF #REQUIRED
+                      percentage CDATA #REQUIRED>
+<!ELEMENT ethnicgroups (#PCDATA)>
+<!ATTLIST ethnicgroups percentage CDATA #REQUIRED>
+
+<!ELEMENT religions (#PCDATA)>
+<!ATTLIST religions percentage CDATA #REQUIRED>
+
+<!ELEMENT languages (#PCDATA)>
+<!ATTLIST languages percentage CDATA #REQUIRED>
+
+<!ELEMENT border EMPTY>
+<!ATTLIST border country IDREF #REQUIRED
+                 length CDATA #REQUIRED
+                 justice IDREF 'org-UN'>
+
+<!ELEMENT province (city*)>
+<!ATTLIST province id ID #REQUIRED
+                   name CDATA #REQUIRED
+                   country IDREF #REQUIRED
+                   capital IDREF #IMPLIED
+                   area CDATA #IMPLIED
+                   population CDATA #IMPLIED>
+
+<!ELEMENT city (name, population*,located_at*)>
+<!ATTLIST city id ID #REQUIRED
+               is_country_cap CDATA #IMPLIED
+               is_state_cap CDATA #IMPLIED
+               longitude CDATA #IMPLIED
+               latitude CDATA #IMPLIED
+               country IDREF #REQUIRED
+               province IDREF #IMPLIED>
+
+<!ELEMENT located_at EMPTY>
+<!ATTLIST located_at type (river|sea|lake) #REQUIRED
+                     water IDREF #IMPLIED>
+
+<!ELEMENT organization (name,abbrev,established?,members*)>
+<!ATTLIST organization id ID #REQUIRED
+                       name CDATA #IMPLIED
+                       abbrev CDATA #IMPLIED
+                       established CDATA #IMPLIED
+                       headq IDREF #IMPLIED>
+<!ELEMENT members EMPTY>
+<!ATTLIST members type CDATA #REQUIRED
+                 country IDREFS #REQUIRED>
+
+<!ELEMENT continent EMPTY>
+<!ATTLIST continent id ID #REQUIRED
+                    area CDATA #IMPLIED
+                    name CDATA #REQUIRED>
+
+<!ELEMENT river (to*, located*)>
+<!ATTLIST river id ID #REQUIRED
+                name CDATA #REQUIRED
+                length CDATA #IMPLIED>
+
+<!ELEMENT to EMPTY>
+<!ATTLIST to type (river|sea|lake) #REQUIRED
+             water IDREF #REQUIRED>
+
+<!ELEMENT located EMPTY>
+<!ATTLIST located country IDREF #REQUIRED
+                  province IDREF #REQUIRED>
+
+<!ELEMENT lake (located*)>
+<!ATTLIST lake id ID #REQUIRED
+               name CDATA #REQUIRED
+               area CDATA #IMPLIED>
+
+<!ELEMENT sea (located*)>
+<!ATTLIST sea id ID #REQUIRED
+              name CDATA #REQUIRED
+              depth CDATA #IMPLIED
+              bordering IDREFS #REQUIRED>
+
+<!ELEMENT desert (located*)>
+<!ATTLIST desert id ID #REQUIRED
+                 name CDATA #REQUIRED
+                 area CDATA #IMPLIED>
+
+<!ELEMENT island (located*)>
+<!ATTLIST island id ID #REQUIRED
+                 name CDATA #REQUIRED
+                 area CDATA #IMPLIED
+                 longitude CDATA #IMPLIED
+                 latitude CDATA #IMPLIED>
+
+<!ELEMENT mountain (located*)>
+<!ATTLIST mountain id ID #REQUIRED
+                   name CDATA #REQUIRED
+                   height CDATA #REQUIRED
+                   longitude CDATA #IMPLIED
+                   latitude CDATA #IMPLIED>
+  
+
