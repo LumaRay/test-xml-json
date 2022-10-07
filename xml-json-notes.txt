@@ -22,5 +22,6 @@ JSON minifier: https://codebeautify.org/jsonminifier
 XML vs JSON
 https://www.toptal.com/web/json-vs-xml-part-1
 
+Benchmarks:
 
 rust-quick-xml 39417
