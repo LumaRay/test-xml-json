@@ -1,5 +1,5 @@
 // https://crates.io/crates/quick-xml
-// 39417
+// 2507
 
 use quick_xml::events::Event;
 use quick_xml::reader::Reader;
@@ -9,7 +9,7 @@ use std::time::{SystemTime};//, UNIX_EPOCH};
 use std::io::Seek;
 use std::io::SeekFrom;
 
-const LOOPS_COUNT: u32 = 16 * 1024;
+const LOOPS_COUNT: u32 = 1000;
 
 fn read(reader: &mut Reader<BufReader<File>>, count: &mut i32, buf: &mut Vec<u8>) {
 	// The `Reader` does not implement `Iterator` because it outputs borrowed data (`Cow`s)
@@ -46,7 +46,7 @@ fn read(reader: &mut Reader<BufReader<File>>, count: &mut i32, buf: &mut Vec<u8>
 }
 
 fn main() {
-	let mut reader = Reader::from_file("/home/test/test-xml-json/test-rust-quick-xml/data/mondial-3.0-mini.xml").unwrap();
+	let mut reader = Reader::from_file("/home/test/test-xml-json/data/mondial-3.0-mini.xml").unwrap();
 	reader.trim_text(true);
 
 	let mut count = 0;
