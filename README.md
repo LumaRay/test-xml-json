@@ -29,7 +29,6 @@ You can find links to the algorithms' web pages in the first comments of the cor
 
 | Language | Package  | Format | DOM | Time, ms  |
 |:-------:|:---------:|:---------:|:---------:|:---------:|
-|  rust  | pugixml  | xml |  |  |
 |  rust  | serde-xml-rs  | xml |  |  |
 |  rust  | xml-rs  | xml |  | 70167 |
 |  rust  | xml-oxide  | xml |  | 43509 |
